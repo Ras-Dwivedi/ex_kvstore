@@ -4,6 +4,6 @@ sudo go build
 
 rm -rf /tmp/example
 TMHOME="/tmp/example" tendermint init
-rm example.sock
+rm example.sock || echo "no example.sock, hence not deleted"
 ./example
 

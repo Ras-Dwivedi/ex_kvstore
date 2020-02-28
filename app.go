@@ -141,7 +141,7 @@ func (KVStoreApplication) InitChain(req abcitypes.RequestInitChain) abcitypes.Re
 func (app *KVStoreApplication) CheckTx(req abcitypes.RequestCheckTx) abcitypes.ResponseCheckTx {
 	fmt.Println("checktx")
 	code := app.isValid(req.Tx)
-	return abcitypes.ResponseCheckTx{Code: code.CodeTypeOk, GasWanted: 6}
+	return abcitypes.ResponseCheckTx{Code: code, GasWanted: 6}
 }
 
 func (app *KVStoreApplication) BeginBlock(req abcitypes.RequestBeginBlock) abcitypes.ResponseBeginBlock {
